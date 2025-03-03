@@ -51,6 +51,15 @@ class databaseConnection{
             await this.closeConnection()
         }
     }
+    async selectQueryExecute(query){
+        try{
+            return await this.poolConnection.query(query)
+        }
+        catch(error){
+            console.error('Failed to execute query : ', error)
+            throw error
+        }
+    }
     async closeConnection() {
         try {
             await this.poolConnection.close();

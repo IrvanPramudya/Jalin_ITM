@@ -1,12 +1,4 @@
-const connection = require('../ITM/connection');
-const itmConfiguration = {
-    host :'13.131.5.25',
-    user: '@irvan',
-    password:'jalin123',
-    connectionLimit:5,
-    keepAlive: false,
-}
-const connectiontoITMAS400 = new connection(itmConfiguration)
+const connectiontoITMAS400 = require('../ITM/dbConfig')
 async function updateNewDate(){
     await connectiontoITMAS400.getConnection()
     const dates = {
